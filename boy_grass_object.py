@@ -59,7 +59,7 @@ class Small_Ball:
         self.image = load_image('ball21x21.png')
         self.x = random.randint(100, 700)
         self.y = 599
-        
+
     def draw(self):
         self.image.draw(self.x, self.y)
 
@@ -93,6 +93,8 @@ def reset_world():
 
     zombie = Zombie()
     world.append(zombie) # 좀비를 만들고 월드에 추가
+
+    balls = [Big_Ball() for _ in range(10)] + [Small_Ball() for _ in range(10)]
 
 def update_world(): # 게임 로직
     for game_object in world:
