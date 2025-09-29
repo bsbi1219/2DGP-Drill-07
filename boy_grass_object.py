@@ -4,18 +4,26 @@ import random
 class Grass:
     def __init__(self): # 개체의 속성을 정의하고 초기화 하는 기능(생성자 함수)
         self.image = load_image('grass.png') # self는 객체 자기 자신을 가리킴
-    pass
 
     def draw(self):
         self.image.draw(400, 30)
+
+    def update(self):
+        pass
+
 
 class Boy:
     def __init__(self):
         self.image = load_image('run_animation.png')
         self.x = 400
         self.frame = 0
+
     def draw(self):
         self.image.clip_draw(self.frame * 100, 0, 100, 100, self.x, 90) # clip_draw는 이미지의 일부분을 그리는 함수. 에니메이션이기 때문에 clip_draw를 사용
+
+    def update(self):
+        self.x += 5
+        self.frame = (self.frame + 1) % 8
 
 def handle_events():
     global running
@@ -37,17 +45,16 @@ def reset_world():
 
     grass = Grass()
     boy = Boy()
-    pass
 
-def update_world():
-    pass
+def update_world(): # 게임 로직
+    grass.update() # 움직이지 않더라도 상호작용 맞춰줘야 함
+    boy.update() # 소년의 상호작용 시뮬레이션 계산
 
 def render_world(): # 월드에 객체들을 그린다
     clear_canvas()
     grass.draw()
     boy.draw()
     update_canvas()
-    pass
 
 reset_world()
 
