@@ -44,6 +44,8 @@ class Zombie:
 class Big_Ball:
     def __init__(self):
         self.image = load_image('ball41x41.png')
+        self.x = random.randint(100, 700)
+        self.y = 599
 
 def handle_events():
     global running
