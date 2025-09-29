@@ -11,7 +11,6 @@ class Grass:
     def update(self):
         pass
 
-
 class Boy:
     def __init__(self):
         self.image = load_image('run_animation.png')
