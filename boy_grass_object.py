@@ -8,10 +8,14 @@ class Grass:
 
     def draw(self):
         self.image.draw(400, 30)
-        pass
 
 class Boy:
-    pass
+    def __init__(self):
+        self.image = load_image('run_animation.png')
+        self.x = 400
+        self.frame = 0
+    def draw(self):
+        self.image.clip_draw(self.frame * 100, 0, 100, 100, self.x, 90) # clip_draw는 이미지의 일부분을 그리는 함수. 에니메이션이기 때문에 clip_draw를 사용
 
 def handle_events():
     global running
@@ -41,6 +45,7 @@ def update_world():
 def render_world(): # 월드에 객체들을 그린다
     clear_canvas()
     grass.draw()
+    boy.draw()
     update_canvas()
     pass
 
