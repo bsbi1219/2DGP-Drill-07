@@ -10,6 +10,14 @@ def handle_events():
         elif event.type == SDL_KEYDOWN and event.key == SDLK_ESCAPE:
             running = False
 
-
 open_canvas()
+
+reset_world()
+
+while True:
+    handle_events()
+    update_world()
+    render_world()
+    delay(0.05)
+    
 close_canvas()
