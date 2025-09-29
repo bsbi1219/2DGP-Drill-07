@@ -95,6 +95,7 @@ def reset_world():
     world.append(zombie) # 좀비를 만들고 월드에 추가
 
     balls = [Big_Ball() for _ in range(10)] + [Small_Ball() for _ in range(10)]
+    world += balls
 
 def update_world(): # 게임 로직
     for game_object in world:
