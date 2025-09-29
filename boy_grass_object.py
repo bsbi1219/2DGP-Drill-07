@@ -41,6 +41,10 @@ class Zombie:
         self.x += 5
         self.frame = (self.frame + 1) % 10
 
+class Big_Ball:
+    def __init__(self):
+        self.image = load_image('ball41x41.png')
+
 def handle_events():
     global running
     events = get_events()
