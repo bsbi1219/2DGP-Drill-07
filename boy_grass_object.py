@@ -46,26 +46,28 @@ class Big_Ball:
         self.image = load_image('ball41x41.png')
         self.x = random.randint(0, 800)
         self.y = 599
+        self.drop_speed = random.randint(5, 10)
 
     def draw(self):
         self.image.draw(self.x, self.y)
 
     def update(self):
         if self.y > 75:
-            self.y -= random.randint(1, 10)
+            self.y -= self.drop_speed
 
 class Small_Ball:
     def __init__(self):
         self.image = load_image('ball21x21.png')
         self.x = random.randint(0, 800)
         self.y = 599
+        self.drop_speed = random.randint(5, 10)
 
     def draw(self):
         self.image.draw(self.x, self.y)
 
     def update(self):
         if self.y > 60:
-            self.y -= random.randint(1, 10)
+            self.y -= self.drop_speed
 
 def handle_events():
     global running
