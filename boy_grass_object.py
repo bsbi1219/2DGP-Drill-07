@@ -1,6 +1,11 @@
 from pico2d import *
 import random
 
+class Grass:
+    pass
+
+
+
 def handle_events():
     global running
     events = get_events()
@@ -12,6 +17,10 @@ def handle_events():
 
 open_canvas()
 
+def reset_world():
+    global
+    pass
+
 reset_world()
 
 while True:
@@ -19,5 +28,5 @@ while True:
     update_world()
     render_world()
     delay(0.05)
-    
+
 close_canvas()
